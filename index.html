@@ -10,7 +10,7 @@ form.addEventListener('submit',async e=>{
  let downloaded=false;
  try{
   if(!crypto.subtle)throw new Error('Open this page over HTTPS to enter the factory.');
-  if(!payload){statusText.textContent='Loading the factory…';const response=await fetch('factory.bin?v=4ec57b9de52d57d6');if(!response.ok)throw new Error('The factory could not be loaded. Please try again.');payload=new Uint8Array(await response.arrayBuffer())}
+  if(!payload){statusText.textContent='Loading the factory…';const response=await fetch('factory.bin?v=56bc3cc798e8368e');if(!response.ok)throw new Error('The factory could not be loaded. Please try again.');payload=new Uint8Array(await response.arrayBuffer())}
   downloaded=true;statusText.textContent='Opening the factory…';
   const pass=field.value.toLowerCase().replace(/[^a-z0-9]/g,'');
   const material=await crypto.subtle.importKey('raw',new TextEncoder().encode(pass),'PBKDF2',false,['deriveKey']);
